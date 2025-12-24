@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash Shishodia | Software Developer & AI/ML Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0f1f17;
+  --panel:#1b3326;
+  --text:#e6f4ea;
+  --muted:#9fbfb0;
+
+  --accent:#C0EDC0;
+  --accent-hover:#a6e3a1;
+  --accent-soft:rgba(192,237,192,0.12);
+
+  --pill-bg:rgba(192,237,192,0.15);
+  --pill-text:#b6f0c2;
+
+  --border:#28453a;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* Background animation */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(192,237,192,.18), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(0,0,0,.45), transparent 45%);
+  z-index:-1;
+  animation:bgMove 18s ease-in-out infinite alternate;
+}
+@keyframes bgMove{to{transform:translateY(-40px)}}
+
+.container{max-width:1150px;margin:auto;padding:0 20px}
+a{text-decoration:none;color:inherit}
+
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter:blur(8px);
+  background:color-mix(in srgb,var(--bg) 85%,transparent);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 0;
+}
+.logo{
+  width:46px;height:46px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-hover));
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  color:#001;
+}
+nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+nav a{color:var(--muted);font-weight:600}
+nav a:hover{color:var(--accent)}
+
+/* Hero */
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:40px;
+  padding:90px 0;
+}
+.hero img{
+  width:100%;
+  border-radius:22px;
+  box-shadow:0 25px 60px rgba(0,0,0,.6);
+}
+
+/* Buttons */
+.btn{
+  padding:12px 20px;
+  border-radius:12px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-hover));
+  color:#001;
+  font-weight:700;
+}
+.btn-ghost{
+  padding:12px 20px;
+  border-radius:12px;
+  background:var(--accent-soft);
+  color:var(--accent);
+  font-weight:600;
+}
+
+/* Sections */
+section{padding:70px 0}
+h1{font-size:42px;margin:10px 0}
+h2{font-size:32px;margin-bottom:22px}
+
+.card{
+  background:var(--panel);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:0 20px 40px rgba(0,0,0,.45);
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 30px 60px rgba(192,237,192,.35);
+}
+
+.skills,.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.pill{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  background:var(--pill-bg);
+  color:var(--pill-text);
+  font-size:13px;
+  margin:4px;
+}
+
+/* Reveal */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
+
+/* Footer */
+footer{
+  padding:30px 0;
+  border-top:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+}
+
+@media(max-width:850px){
+  .hero{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="logo">A</div>
+      <div>
+        <strong>Akash Shishodia</strong><br>
+        <small style="color:var(--muted)">Software Developer & AI/ML Engineer</small>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+<!-- HERO -->
+<section id="home" class="hero reveal">
+  <div>
+    <p style="color:var(--muted)">Hello 👋 I'm</p>
+    <h1 id="typing"></h1>
+    <p style="color:var(--muted)">
+      B.Tech (Data Science) student and passionate Software Developer & AI/ML Engineer,
+      focused on building intelligent and scalable applications.
+    </p>
+    <div style="margin-top:24px;display:flex;gap:14px">
+      <a class="btn" href="#contact">Hire Me</a>
+      <a class="btn-ghost" href="img/resume.pdf" download>Download Resume</a>
+    </div>
+  </div>
+  <img src="img/img.png" alt="Akash Shishodia">
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <h2>About Me</h2>
+  <div class="card">
+    <p style="color:var(--muted)">
+      Software Developer & AI/ML Engineer pursuing B.Tech in Data Science at MIET, Meerut.
+      I enjoy building scalable web applications and AI-powered systems.
+    </p>
+    <p><strong>Internship:</strong><br>
+      AI/ML Engineer Intern — Ecotech Service (Sep–Oct 2025)
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="card">
+      <h4>Programming</h4>
+      <span class="pill">HTML</span><span class="pill">CSS</span>
+      <span class="pill">JavaScript</span><span class="pill">Java</span>
+      <span class="pill">Python</span>
+    </div>
+    <div class="card">
+      <h4>AI & Data</h4>
+      <span class="pill">Machine Learning</span>
+      <span class="pill">NumPy</span>
+      <span class="pill">Pandas</span>
+    </div>
+    <div class="card">
+      <h4>Databases & Tools</h4>
+      <span class="pill">MySQL</span>
+      <span class="pill">MongoDB</span>
+      <span class="pill">Power BI</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <div class="card">
+      <h4>AI Text-to-Speech App</h4>
+      <p style="color:var(--muted)">Text to voice generation using JavaScript.</p>
+      <a class="btn-ghost" href="https://ai-text-to-speech-gamma.vercel.app/" target="_blank">Live Demo</a>
+    </div>
+
+    <div class="card">
+      <h4>Face Recognition Voting System</h4>
+      <p style="color:var(--muted)">Secure online voting using facial recognition.</p>
+      <a class="btn-ghost" href="https://face-recognition-voting-system.onrender.com" target="_blank">Live Demo</a>
+    </div>
+
+    <div class="card">
+      <h4>E-Commerce Website</h4>
+      <p style="color:var(--muted)">Responsive shopping platform.</p>
+      <a class="btn-ghost" href="https://noddy-e-commerce.onrender.com" target="_blank">Live Demo</a>
+    </div>
+
+    <div class="card">
+      <h4>Flower Shop Web App</h4>
+      <p style="color:var(--muted)">Online flower ordering system.</p>
+      <a class="btn-ghost" href="https://noddy-flower-shop.onrender.com" target="_blank">Live Demo</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: <a href="mailto:ashishodia819@gmail.com">ashishodia819@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919568586052">+91-9568586052</a></p>
+    <p>
+      <a class="btn-ghost" href="https://www.linkedin.com/in/akash-s-25166a294/" target="_blank">LinkedIn</a>
+      <a class="btn-ghost" href="https://github.com/akashshishodia64-commits" target="_blank">GitHub</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="container">
+  <div>© 2025 Akash Shishodia</div>
+  <a class="btn-ghost" href="#home">Top</a>
+</footer>
+
+<script>
+// Typing effect
+const text="Akash Shishodia — Software Developer & AI/ML Engineer";
+let i=0;
+const el=document.getElementById("typing");
+(function type(){
+  if(i<text.length){
+    el.textContent+=text.charAt(i++);
+    setTimeout(type,70);
+  }
+})();
+
+// Reveal animation
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>x.isIntersecting && x.target.classList.add("active"));
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
